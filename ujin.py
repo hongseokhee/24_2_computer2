@@ -10,12 +10,12 @@ def draw_graph(data, domain, category):
 
     plt.figure(figsize=(8, 6))
 
-    plt.plot(standard, male, label='남', color='blue')
-    plt.plot(standard, female, label='여', color='orange')
+    plt.plot(standard, male, label='male', color='blue')
+    plt.plot(standard, female, label='female', color='orange')
 
-    plt.title(f"2024학년도 수능 {category} 과목 분포", fontsize=14)
-    plt.xlabel("표준점수", fontsize=12)
-    plt.ylabel("명수", fontsize=12)
+    plt.title(f"2024 Suneung {category} Subject Distribution", fontsize=14)
+    plt.xlabel("Standard Socre", fontsize=12)
+    plt.ylabel("Number of Students", fontsize=12)
     plt.legend(fontsize=10)
 
     plt.grid(alpha=0.3)
@@ -29,4 +29,4 @@ if __name__ == "__main__":
     with open('suneung.pkl', 'rb') as f:
 	    data = pickle.load(f)
     
-    draw_graph(data, '국어', '국어')
+    draw_graph(data, '사회탐구', '생활과 윤리')

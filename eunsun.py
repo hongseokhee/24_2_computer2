@@ -1,5 +1,6 @@
 import numpy as np
 import csv
+import pickle
 
 def save_data(csv_path):
     data_structure = {}
@@ -36,3 +37,6 @@ if __name__ == "__main__":
     path = "20231231.csv" 
     result = save_data(path)
     print(result)
+
+    with open('suneung.pkl', 'wb') as f:
+	    pickle.dump(result, f, protocol=pickle.HIGHEST_PROTOCOL)

@@ -11,7 +11,7 @@ def save_data(csv_path):
         for row in reader:
             domain = row[0]  # 영역
             category = row[1]  # 유형
-            standard = float(row[2])  # 표준점수
+            standard = int(row[2])  # 표준점수
             male = int(row[3])  # 남자
             female = int(row[4])  # 여자
             
@@ -19,15 +19,20 @@ def save_data(csv_path):
                 data_structure[domain] = {}
             
             if category not in data_structure[domain]:
-                data_structure[domain][category] = []
+                data_structure[domain][category] = [[], [], []]
             
-            data_structure[domain][category].append([standard, male, female])
+            data_structure[domain][category][0].append(standard)
+            data_structure[domain][category][1].append(male)
+            data_structure[domain][category][2].append(female)
+
+
+    for domain, categories in data_structure.items():
+        for category, lists in categories.items():
+            data_structure[domain][category] = [np.array(l) for l in lists]
     
-    result = [[domain, [[category, values] for category, values in categories.items()]] for domain, categories in data_structure.items()]
-    
-    return np.array(result, dtype=object)
+    return data_structure
 
 if __name__ == "__main__":
     path = "20231231.csv" 
-    result_ndarray = save_data(path)
-    print(result_ndarray)
+    result = save_data(path)
+    print(result)

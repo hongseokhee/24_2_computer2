@@ -28,13 +28,13 @@ def draw_graph(data, domain, category):
 
     plt.grid(alpha=0.3)
 
-    plt.savefig(f"{domain}_{category}_graph.png", dpi=300)
-    print(f"{domain}_{category}_graph.png라는 파일명으로 그래프 저장됨")
+    plt.show()
+
+    #plt.savefig(f"{domain}_{category}_graph.png", dpi=300)
+    #print(f"{domain}_{category}_graph.png라는 파일명으로 그래프 저장됨")
 
     plt.close()
 
 if __name__ == "__main__":
     with open('suneung.pkl', 'rb') as f:
 	    data = pickle.load(f)
-    
-    draw_graph(data, '사회탐구', '생활과 윤리')

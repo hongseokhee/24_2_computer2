@@ -30,8 +30,8 @@ def draw_graph(data, domain, category):
 
     plt.show()
 
-    #plt.savefig(f"{domain}_{category}_graph.png", dpi=300)
-    #print(f"{domain}_{category}_graph.png라는 파일명으로 그래프 저장됨")
+    plt.savefig(f"{domain}_{category}_graph.png", dpi=300)
+    print(f"{domain}_{category}_graph.png라는 파일명으로 그래프 저장됨")
 
     plt.close()
 

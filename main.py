@@ -3,14 +3,6 @@
 import eunsun, ujin
 
 def isvalid(realm):
-    return realm in df
-
-def subject(realm):
-    return list(set(df[realm]))
-
-import eunsun, ujin
-
-def isvalid(realm):
     realmfalse = 0
     if realm not in df:
         realmfalse = 1
@@ -21,7 +13,7 @@ def subject(realm):
     possible_list = list(set(df[realm]))
     return possible_list
 
-while True:
+while True: # 연도
     wanna_know_year = (input("시험 시행년도를 입력하세요(데이터 상 존재하는 연도 : 2020, 2021, 2022, 2023) : "))
     try:
         year = int(wanna_know_year)

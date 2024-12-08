@@ -18,8 +18,8 @@ def draw_graph(data, domain, category):
 
     plt.figure(figsize=(8, 6))
 
-    plt.plot(standard, male, label='남', color='blue')
-    plt.plot(standard, female, label='여', color='orange')
+    plt.scatter(standard, male, label='남학생', color='blue', alpha=0.6, s=10)
+    plt.scatter(standard, female, label='여학생', color='orange', alpha=0.6, s=10)  
 
     plt.title(f"2024 수능 {category} 과목 분포", fontsize=14)
     plt.xlabel("표준점수", fontsize=12)
@@ -30,8 +30,8 @@ def draw_graph(data, domain, category):
 
     plt.show()
 
-    plt.savefig(f"{domain}_{category}_graph.png", dpi=300)
-    print(f"{domain}_{category}_graph.png라는 파일명으로 그래프 저장됨")
+    plt.savefig(f"{domain}_{category}_scatter_graph.png", dpi=300)
+    print(f"{domain}_{category}_scatter_graph.png라는 파일명으로 그래프 저장됨")
 
     plt.close()
 

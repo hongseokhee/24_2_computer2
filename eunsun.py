@@ -33,7 +33,7 @@ def save_data(csv_path):
     
     return data_structure
 
-if __name__ == "__main__":
+#if __name__ == "__main__":
     path = "20231231.csv" 
     result = save_data(path)
     print(result)

@@ -33,7 +33,11 @@ while True:
         if wanna_know_subject not in df[wanna_know_realm]:
             print(f"{wanna_know_subject} 과목은 존재하지 않습니다.")
         else:
-            ujin.draw_graph(df, wanna_know_realm, wanna_know_subject)
-            break
+            data_type = int(input("그래프를 그리는 데 사용할 데이터의 종류를 선택해주세요. 1) 명수 2) 비율 (1 또는 2 입력): "))
+            if data_type == 1 or data_type == 2:
+                ujin.draw_graph(df, wanna_know_realm, wanna_know_subject, data_type)
+                break
+            else:
+                print(f"{data_type}라는 데이터 종류는 없습니다.")
     else:
         print(f"데이터에 {wanna_know_realm} 영역은 없습니다.")
